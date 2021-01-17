@@ -23,21 +23,21 @@ public class MainVerticle extends AbstractVerticle {
     Router router = Router.router(vertx);
     staticHandler(router);
     router.get("/friends.hbs") //
-      .handler(this::getFriends) //
-      .failureHandler(event -> System.out.println(event.failure()));
+        .handler(this::getFriends) //
+        .failureHandler(event -> System.out.println(event.failure()));
     dynamicPages(router);
 
     vertx.createHttpServer()//
-      .requestHandler(router)//
-      .listen(PORT, http -> {
-        if (http.succeeded()) {
-          System.out.println("HTTP server started on port 8888");
-          startPromise.complete();
-        } else {
-          System.out.println(http.cause());
-          startPromise.fail(http.cause());
-        }
-      });
+        .requestHandler(router)//
+        .listen(PORT, http -> {
+          if (http.succeeded()) {
+            System.out.println("HTTP server started on port 8888");
+            startPromise.complete();
+          } else {
+            System.out.println(http.cause());
+            startPromise.fail(http.cause());
+          }
+        });
   }
 
   private void staticHandler(Router router) {
@@ -56,8 +56,8 @@ public class MainVerticle extends AbstractVerticle {
   private void setUpMongo() {
     // change this when working using ./gradlew run to be mongodb://localhost:27017
     JsonObject mongoconfig = new JsonObject() //
-      .put("connection_string", "mongodb://mongo:27017") //
-      .put("db_name", "friends");
+        .put("connection_string", "mongodb://mongo:27017") //
+        .put("db_name", "friends");
     client = MongoClient.create(vertx, mongoconfig);
   }
 

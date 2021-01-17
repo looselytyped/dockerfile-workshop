@@ -21,7 +21,6 @@ WORKDIR /code
 COPY src/ src/
 RUN ["./gradlew", "-q", "--no-daemon", "shadowJar"]
 
-
 # ——— Final Image —————————————————————————————————————————————————————————————
 FROM openjdk:${JRE_VERSION}
 EXPOSE 8080
