@@ -13,7 +13,6 @@ You will need **2** things installed
 
 - Docker
 - [Git](https://git-scm.com/downloads)
-- [Docker Compose](https://docs.docker.com/compose/install/)
 
 Optionally, a good text editor.
 I highly recommend [VS Code](https://code.visualstudio.com/) with the [Docker Extension](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker).
