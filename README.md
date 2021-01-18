@@ -5,7 +5,7 @@
 - This **is a workshop**. Please come with a laptop that has the necessary installed software.
 - Don't let the length of this document intimidate you :)
 - Please follow **all of the installation instructions** in this document before coming to the workshop.
-  Debugging docker/git/compose installation takes time away from all attendees.
+  Debugging docker/git installation takes time away from all attendees.
 
 ## Installation
 
@@ -32,8 +32,6 @@ There are two items of note
 ```bash
 > docker -v
 Docker version 20.10.2, build 2291f61
-> docker-compose -v
-docker-compose version 1.27.4, build 40524192
 ```
 
 ## Warm up your engines!
@@ -43,15 +41,14 @@ Running this over a hotel wifi connection might not go well.
 Using the command (bash) prompt:
 
 ```bash
-docker pull alpine:3.12;
-docker pull jenkins/jenkins:2.99;
-docker pull mongo:3.6.17;
-docker pull nginx:1.19.6-alpine;
-docker pull openjdk:8u131-jdk;
-docker pull openjdk:8u131-jre;
-docker pull portainer/portainer:latest;
-docker pull tomcat:9;
-docker pull ubuntu:21.04;
+docker image pull alpine:3.12;
+docker image pull jenkins/jenkins:2.99;
+docker image pull mongo:3.6.17;
+docker image pull nginx:1.19.6-alpine;
+docker pull openjdk:11.0.5-jdk;
+docker pull openjdk:11.0.5-jre;
+docker image pull ubuntu:21.04;
+docker image pull mariadb:10.3.27;
 ```
 
 ## The final test
@@ -93,8 +90,3 @@ docker container rm myjenkins;
 
 Woot!!!
 See you soon!!!
-
-## Notes
-
-- This project consists of a slew of Dockerfiles that demonstrate how to (and **not** to) use a few select Dockerfile instructions
-- This project also packages the artifact that this project produces so you do **not** need Java installed
